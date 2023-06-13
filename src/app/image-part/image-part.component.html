@@ -1,0 +1,1 @@
+<button *ngIf="src" [disabled]="!puzzleService.activeImgParts[src.x][src.y]" (click)="onClick()">{{puzzleService.randomizeSequence[src.x][src.y]}}</button>

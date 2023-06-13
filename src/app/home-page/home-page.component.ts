@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PuzzleService } from '../services/puzzle.service';
 
 @Component({
   selector: 'app-home-page',
