@@ -15,13 +15,13 @@ export class ImagePartComponent {
   constructor(public puzzleService: PuzzleService) {}
 
   onClick(): void {
-    if (this.src && this.puzzleService.activeImgParts[this.src.x][this.src.y] && !this.puzzleService.isGameStopped) {
-      if (this.src) {
-        this.puzzleService.changeBlank(this.src);
+    if(!this.puzzleService.isGameStopped && this.src){
+      if (this.puzzleService.activeImgParts[this.src.x][this.src.y]) {
+          this.puzzleService.changeBlank(this.src);
       }
-    }
-    if (this.src && this.puzzleService.isPuzzleSolve()) {
-      this.isWon.emit(true);
+      if (this.puzzleService.isPuzzleSolve()) {
+        this.isWon.emit(true);
+      }
     }
   }
 }
