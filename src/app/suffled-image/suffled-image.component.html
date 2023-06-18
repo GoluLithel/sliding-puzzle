@@ -1,10 +1,17 @@
-<p>This is working</p>
-<app-image-part [src]="{x:0,y:0}"></app-image-part>
-<app-image-part [src]="{x:0,y:1}"></app-image-part>
-<app-image-part [src]="{x:0,y:2}"></app-image-part><br>
-<app-image-part [src]="{x:1,y:0}"></app-image-part>
-<app-image-part [src]="{x:1,y:1}"></app-image-part>
-<app-image-part [src]="{x:1,y:2}"></app-image-part><br>
-<app-image-part [src]="{x:2,y:0}"></app-image-part>
-<app-image-part [src]="{x:2,y:1}"></app-image-part>
-<app-image-part [src]="{x:2,y:2}"></app-image-part><br>
+<table cellspacing="0">
+  <tr>
+    <app-image-part [src]="{x:0,y:0}"></app-image-part>
+    <app-image-part [src]="{x:0,y:1}"></app-image-part>
+    <app-image-part [src]="{x:0,y:2}"></app-image-part>
+  </tr>
+  <tr>
+    <app-image-part [src]="{x:1,y:0}"></app-image-part>
+    <app-image-part [src]="{x:1,y:1}"></app-image-part>
+    <app-image-part [src]="{x:1,y:2}"></app-image-part>
+  </tr>
+  <tr>
+    <app-image-part [src]="{x:2,y:0}"></app-image-part>
+    <app-image-part [src]="{x:2,y:1}"></app-image-part>
+    <app-image-part [src]="{x:2,y:2}" (isWon)="onWon()" ></app-image-part>
+  </tr>
+</table>

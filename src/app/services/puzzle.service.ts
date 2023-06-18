@@ -8,6 +8,7 @@ export class PuzzleService {
 
   public randomizeSequence: number[][];
   public activeImgParts: Boolean[][];
+  public isGameStopped: Boolean = false;
   initialBlankPos: ContentPos;
 
   constructor() {
@@ -72,6 +73,25 @@ export class PuzzleService {
     (x == this.initialBlankPos.x-1 && y == this.initialBlankPos.y) ||
     (x == this.initialBlankPos.x && y == this.initialBlankPos.y+1) ||
     (x == this.initialBlankPos.x && y == this.initialBlankPos.y-1)
+  }
+
+  isPuzzleSolve(): Boolean {
+    let counter = 1;
+    for(let i=0;i<3;i++) {
+      for(let j=0;j<3;j++) {
+        if (this.randomizeSequence[i][j]!=counter) {
+          return false;
+        }
+        counter++;
+        if (counter==9) {
+          this.randomizeSequence[2][2] = 9;
+          this.isGameStopped = true;
+          return true;
+        }
+      }
+    }
+    this.isGameStopped = true;
+    return true;
   }
 }
 
